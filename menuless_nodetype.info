@@ -1,0 +1,4 @@
+; $Id: 
+name = Menuless Node Type
+description = Makes menu configurable per node type.
+core = 6.x
