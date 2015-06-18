@@ -17,7 +17,7 @@ function menuless_nodetype_form_alter(&$form, $form_state, $form_id) {
     $form += menuless_nodetype_node_type_form($form['#node_type']->type);
   }
 
-  if (ereg('_node_form$', $form_id)) {
+  if (preg_match('/_node_form$/', $form_id)) {
     if (is_array($active_setting = variable_get('menuless_node_type_options_'.$form['type']['#value'], 'active'))) {
       if (!in_array('active', $active_setting)) {
         $form['menu']['#access'] = 0;
